@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Formulario</title>
+    <link type="text/css" rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="./functions.js"></script>
+</head>
+
+<body>
+    <div class="container" hidden>
+        <label for="name" id="lblName">Nombre</label>
+        <input type="text" placeholder="Tu nombre" id="name" maxlength="25">
+        <label for="surname" id="lblSurname">Apellido</label>
+        <input type="text" placeholder="Tu apellido" id="surname" maxlength="10">
+        <input type="button" name="add" value="Agregar" id="add" class="button" onclick="add()">
+    </div>
+    <br>
+    <h2>Lista de personas</h2>
+    <div>
+        <table border="3" id="table" class="table">
+            <thead id="column">
+                <th>nombre</th>
+                <th>apellido</th>
+                <th>accion</th>
+            </thead>
+            <tbody id="bodyTable">
+                <tr id="row">
+                    <a href="" onclick="deleteRowTable(e)"></a>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

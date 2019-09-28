@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        #spinner{
+            position: absolute;
+            left: 50%;
+            right: 50%;
+        }
+        #login{
+            position: absolute;
+            left: 50%;
+            right: 50%;
+        }
+    </style>
+    <script>
+       window.addEventListener('load', enviar);
+        function enviar(){
+            let http = new XMLHttpRequest();
+            miboton = document.getElementById('btnLogin');
+            miboton.addEventListener('click',function(){
+            let user = document.getElementById('user').value;
+            let pass = document.getElementById('pass').value;
+
+            
+                    
+            http.onreadystatechange = function(){
+                console.log("Llego respuesta",http.readyState,http.status);
+                if(http.readyState === 4 && http.status === 200){
+                    console.log("Tenemos respuesta",http.responseText);
+                    document.getElementById('spinner').setAttribute('hidden',true);
+                    }
+                }
+                //GET
+                //http.open("GET",`http://localhost:3000/loginUsuario?usr=${user}&pass=${pass}`);
+                //http.send();
+                
+                //POST
+                http.open("POST",`http://localhost:3000/loginUsuario`);
+                document.getElementById('spinner').removeAttribute('hidden');
+                http.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+                http.send(`usr=${user}&pass=${pass}`);
+            })
+
+        }
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <p>Prueba AJAX</p>
+    <div id="spinner" hidden >
+        <img src="./5.gif" alt="spinner">
+    </div>
+    <div id="login">
+        <input type="text" id="user">
+        <br><br>
+        <input type="password" id="pass">
+        <br><br>
+        <input type="button" id="btnLogin" value="Login">
+    </div>
+    
+</body>
+</html>

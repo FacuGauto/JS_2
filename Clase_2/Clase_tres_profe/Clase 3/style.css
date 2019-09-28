@@ -1,0 +1,76 @@
+.container {
+    width: 20%;
+    padding: 20px;
+    border: 1px;
+    border-radius: 3px;
+    background-color: rgb(161, 159, 159);
+}
+
+input[type=text] {
+    width: 100%;
+    padding: 12px 20px; /*alto y ancho del cuadro, el texto queda en el medio*/ 
+    margin: 8px 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    border-radius: 3px;
+    box-sizing: border-box; /*para que los cuadros de texto no se vayan del contenedor*/
+    background-color: rgb(255, 255, 255);
+}
+
+#lblName {
+    color: black;
+}
+
+#lblSurname {
+    color: black;
+}
+
+.button {
+    background-color: rgb(1, 82, 1);
+    width: 120px;
+    height: 40px;
+    border-radius: 3px;
+    margin: 20px 0;
+    padding-left: 0px;
+    cursor: pointer;
+    border: thin;
+    border-style: solid;
+}
+
+/*input[type=button]:hover {
+    background-color: 
+}*/
+
+.table {
+    border-collapse: collapse;
+    width: 50%;
+    text-align: left;
+    padding: 8px;
+}
+
+th {
+    text-align: left;
+    background-color: rgb(180, 12, 12);
+    padding: 8px;
+}
+
+td {
+    text-align: left;
+    padding: 8px;
+}
+
+/*a los tr pares les cambia el background*/
+tr:nth-child(event) {
+    background-color: #f2f2f2;
+}
+
+.sinError {
+    border: 1px solid #cccccc;
+}
+
+.error {
+    border: 1px solid red;
+}
+
+a {
+    margin: 10px;
+}

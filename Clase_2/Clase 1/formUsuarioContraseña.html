@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Formulario de usuario y contraseña</title>
+    <script type="text/javascript" src="./funciones.js"></script>
+</head>
+
+<body>
+    <form action="es la ruta donde va a ir toda la informacion que se complete en el form">
+        <fieldset>
+            <legend>Login</legend>
+            <p><label for="txtUsuario">Usuario:</label></p>
+            <input type="text" id="txtUsuario" placeholder="Ingrese nombre de usuario">
+            <p><label for="txtPassword">Contraseña:</label></p>
+            <input type="password" id="txtPassword" placeholder="Ingrese contraseña">
+            <br>
+            <input type="checkbox" id="chxUserPassword" checked>Recordar usuario y contraseña
+            <br>
+            <br>
+            <input type="button" value="Enviar informacion" onclick="mostrar()">
+            <input type="reset" value="Limpiar">
+        </fieldset>
+    </form>
+</body>
+
+</html>

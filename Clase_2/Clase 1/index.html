@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+    <!--Lo que hay dentro del head es toda informacion que se le da al navegador-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pagina principal</title>
+</head>
+<body>
+    <!--Lo que hay dentro del body es toda la informacion que le vamos a dar al usuario-->
+
+    <!--Cabeceras h1, h2, etc-->
+    <h1>Esta es una cabecera h1</h1>
+    <h2>Esta es una cabecera h2</h2>
+    <h3>Esta es una cabecera h3</h3>
+    <h4>Esta es una cabecera h4</h4>
+    <h5>Esta es una cabecera h5</h5>
+    <h6>Esta es una cabecera h6</h6>
+
+    <!--Parrafos. No usar <br>, en reemplazo usar <p>, esto es porque luego con css se acomodan los espacios-->
+    <p>Esto es un parrafo</p>
+    <p>Este es otro      parrafo
+        con muchos espacios     en el codigo, aunque el navegador lo muestra de forma correcta
+    </p>
+
+    <!--break lines (saltos de lineas)-->
+    <p>Este es un <br>parrafo con br, el cual no lleva <br>etiqueta de cierre</p>
+
+    <!--Lorem ipsum: Texto que se utiliza habitualmente en diseño grafico para probar el diseño visual antes de mostrarlo-->
+    Lorem ipsum dolor sit amet <span style="color: red"> consectetur adipisicing elit</span>. Omnis dolorum repudiandae voluptatum ipsa atque impedit a blanditiis nulla ut amet enim itaque velit, officiis ad ducimus aliquam, dolorem hic nihil!
+
+    <!--La etiqueta <div> define una división o una sección en un documento HTML. Se usa como contenedor de otros elementos HTML para diseñarlos con CSS o para realizar ciertas tareas con JavaScript-->
+    <div style="color: royalblue">
+        <h4>etiqueta div</h4>
+        <p>texto de ejemplo</p>
+    </div>
+
+    <!--ul es una lista no ordenada, muestra las opciones con viñetas-->
+    <ul>
+        <li>Lunes</li>
+        <li>Martes</li>
+        <li>Miercoles</li>
+        <li>Jueves</li>
+        <li>Viernes</li>
+    </ul>
+
+    <!--ol es una lista ordenada por numeracion-->
+    <ol>
+        <li>Lunes</li>
+        <li>Martes</li>
+        <li>Miercoles</li>
+        <li>Jueves</li>
+        <li>Viernes</li>
+    </ol>
+
+    <!--formulario para paginas-->
+    <form>
+            <!--los input son todos elementos que me permiten ingresar informacion-->
+            <input type="text" id="txtNombre" value="Texto para mostrar" size="12" maxlength="15">
+            <br>
+            <br>
+            <input type="file">
+            <br>
+            <br>
+            <input type="password">
+            <br>
+            <br>
+            <input type="button" value="Boton de prueba">
+            <br>
+            <br>
+            <input type="checkbox" name="opcion1" value="0" checked> <!--checked es para que aparezca tildado-->
+            <br>
+            <br>
+            <!--Los radio button tienen que tener el mismo name para que siempre se pueda chequear solo uno-->
+            <input type="radio" name="rbtn " value="dni" checked>
+            <input type="radio" name="rbtn " value="pass">
+            <input type="radio" name="rbtn " value="li">
+            <br>
+            <input type="hidden" value="Valor oculto">
+            <br>
+            <br>
+            <input type="image" src="./Desert.jpg">
+            <br>
+            <textarea rows="5" cols="20" wrap></textarea> <!--el wrap da el salto de linea en el limite de cada fila, esta agregado por defecto-->
+            <br>
+            <br>
+            <select>
+                <optgroup label="Grupo 1">
+                        <option value="valor1"> opcion 1</option>
+                        <option value="valor2"> opcion 2</option>
+                        <option value="valor3"> opcion 3</option>
+                        <option value="valor4"> opcion 4</option>
+                        <option value="valor5"> opcion 5</option>
+                </optgroup>
+                <optgroup label="Grupo 2">
+                        <option value="valor1"> opcion 1</option>
+                        <option value="valor2"> opcion 2</option>
+                        <option value="valor3"> opcion 3</option>
+                        <option value="valor4"> opcion 4</option>
+                        <option value="valor5"> opcion 5</option>
+                </optgroup>
+            </select>
+            <br>
+            <br>
+            <select name="opciones" id="selectId">
+                    <option value="valor1"> opcion 1</option>
+                    <option value="valor2"> opcion 2</option>
+                    <option value="valor3"> opcion 3</option>
+                    <option value="valor4"> opcion 4</option>
+                    <option value="valor5"> opcion 5</option>
+            </select>
+            <br>
+            <br>
+            <input type="submit" value="Subir info">
+            <input type="reset">
+    </form>
+    
+
+</body>
+</html>

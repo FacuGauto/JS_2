@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+            table, th, td {
+              border: 1px solid black;
+            }
+            </style>
+    <script>
+        
+        window.addEventListener('load', enviar);
+        function enviar(){
+            let http = new XMLHttpRequest();
+            miboton = document.getElementById('btnJson');
+            miboton.addEventListener('click',function(){
+                    
+            http.onreadystatechange = function(){
+                //console.log("Llego respuesta",http.readyState,http.status);
+                if(http.readyState === 4 && http.status === 200){
+                    let container = document.getElementById('tabla-lista');
+                    let table = document.createElement("table");
+                    let lista = JSON.parse(http.responseText)
+                    let col = Object.keys(lista[0]);
+                    let tr = table.insertRow(-1);
+
+                    col.forEach(element => {
+                        let th = document.createElement("th");
+                        let nodetexto = document.createTextNode(element.toUpperCase());
+                        th.appendChild(nodetexto);
+                        tr.appendChild(th);
+                    });
+
+                    lista.forEach(element_lista => {
+                        tr = table.insertRow(-1);
+                        col.forEach(element_col => {
+                            let celda = tr.insertCell(-1);
+                            let nodetexto = document.createTextNode(element_lista[element_col]);
+                            celda.appendChild(nodetexto);
+                        });
+                    });
+                    container.appendChild(table);
+                    }
+                }
+                //GET
+                http.open("GET",`http://localhost:3000/personas`);
+                http.send();
+            })
+
+        }
+    </script>
+</head>
+<body>
+    <p>JSON</p>
+    <input type="button" id="btnJson" value="Lista de personas">
+    <br><br>
+    <div id="tabla-lista"></div>
+</body>
+</html>
