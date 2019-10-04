@@ -1,4 +1,5 @@
 window.addEventListener('load', enviar);
+window.addEventListener('load', altaPersona);
 
 function enviar(){
     let http = new XMLHttpRequest();
@@ -7,9 +8,11 @@ function enviar(){
         http.onreadystatechange = function(){
             //console.log("Llego respuesta",http.readyState,http.status);
             if(http.readyState === 4 && http.status === 200){
-                let container = document.getElementById('tabla-lista');         
-                let lista = JSON.parse(http.responseText);
-                createTable(container,lista);
+                let container = document.getElementById('tabla-lista');
+                if(container.children.length === 0){
+                    let lista = JSON.parse(http.responseText);
+                    createTable(container,lista);
+                }
             }
         }
         //GET
@@ -40,4 +43,25 @@ function createTable(div_container,lista) {
         });
     });
     div_container.appendChild(table);
+}
+
+function altaPersona(params) {
+    let http = new XMLHttpRequest();
+    let nombre = "Facundo";
+    let apellido = "Gauto";
+    let fecha = "2019/10/04";
+    let telefono = "45124578";
+
+    miboton = document.getElementById('btnAlta');
+    miboton.addEventListener('click',function(){
+        http.onreadystatechange = function(){
+            if(http.readyState === 4 && http.status === 200){
+                console.log('Entro');
+            }
+        }
+        //POST
+        http.open("POST",`http://localhost:3000/nuevaPersona`);
+        http.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+        http.send(`nombre=${nombre}&apellido=${apellido}&telefono=${telefono}&fecha=${fecha}`);
+    })
 }
