@@ -1,5 +1,6 @@
 window.addEventListener('load', enviar);
 window.addEventListener('load', altaPersona);
+window.addEventListener('load', agregar);
 
 function enviar(){
     let http = new XMLHttpRequest();
@@ -27,21 +28,22 @@ function createTable(div_container,lista) {
     let col = Object.keys(lista[0]);
     let tr = table.insertRow(-1);
 
-    col.forEach(element => {
+    col.forEach(function(element){
         let th = document.createElement("th");
         let nodetexto = document.createTextNode(element.toUpperCase());
         th.appendChild(nodetexto);
         tr.appendChild(th);
     });
 
-    lista.forEach(element_lista => {
+    lista.forEach(function(element_lista){
         tr = table.insertRow(-1);
-        col.forEach(element_col => {
+        col.forEach(function(element_col){
             let celda = tr.insertCell(-1);
             let nodetexto = document.createTextNode(element_lista[element_col]);
             celda.appendChild(nodetexto);
         });
     });
+
     div_container.appendChild(table);
 }
 
@@ -64,4 +66,25 @@ function altaPersona(params) {
         http.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
         http.send(`nombre=${nombre}&apellido=${apellido}&telefono=${telefono}&fecha=${fecha}`);
     })
+}
+
+function agregar() {
+    let http = new XMLHttpRequest();
+    btn_agregar = document.getElementById('btnAgregar');
+    btn_agregar.addEventListener('click',function(params) {
+        let nombre = document.getElementById('nombre').value;
+        let apellido = document.getElementById('apellido').value;
+        let fecha = document.getElementById('fecha').value;
+        let telefono = document.getElementById('telefono').value;
+        http.onreadystatechange = function(){
+            if(http.readyState === 4 && http.status === 200){
+                console.log('Entro');
+            }
+        }
+        //POST
+        http.open("POST",`http://localhost:3000/nuevaPersona`);
+        http.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+        http.send(`nombre=${nombre}&apellido=${apellido}&telefono=${telefono}&fecha=${fecha}`);
+    });
+    
 }
