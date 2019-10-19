@@ -12,6 +12,7 @@ function enviar(){
             let lista = JSON.parse(http.responseText);
             console.log(lista);
             createTable(container,lista);
+            createCards(container,lista);
             document.getElementById('spinner').setAttribute('hidden',true);
         }
     }
@@ -126,28 +127,11 @@ function dobleClick(e) {
         console.log(element.textContent);
     });*/
 }
-/*
+
 function createCards(div_container,lista) {
     let card = document.createElement("div");
+    console.log(lista[0]);
     //let imagen = 
-    let col = Object.keys(lista[0]);
-    let tr = table.insertRow(-1);
-
-    col.forEach(function(element){
-        let th = document.createElement("th");
-        let nodetexto = document.createTextNode(element.toUpperCase());
-        th.appendChild(nodetexto);
-        tr.appendChild(th);
-    });
-
-    lista.forEach(function(element_lista){
-        tr = table.insertRow(-1);
-        col.forEach(function(element_col){
-            let celda = tr.insertCell(-1);
-            let nodetexto = document.createTextNode(element_lista[element_col]);
-            celda.appendChild(nodetexto);
-        });
-        tr.addEventListener('dblclick', dobleClick);
-    });
-    div_container.appendChild(table);
-}*/
+    
+    //div_container.appendChild(card);
+}

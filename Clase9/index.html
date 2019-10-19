@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <script>
+
+        $("document").ready(function(){
+            console.log(document.getElementById('parrafo').innerHTML);
+            //JQUERY
+            console.log($("#parrafo").html());
+            $("#parrafo").html("ALGO");
+            $('#btn').click(saludar);
+            //get del valor
+        $("#txt").val();
+        $("#txt").attr("id");
+
+        //set del valor
+        $("#txt").attr("id","nuevo");
+        $("#txt").val("Nuevo valor");
+        });
+        /*window.addEventListener('load',function(){
+            console.log(document.getElementById('parrafo').innerHTML);
+            //JQUERY
+            console.log($("#parrafo").html());
+            $("#parrafo").html("ALGO");
+            $('#btn').click(saludar);
+        });*/
+
+        $("button").click(function(){
+        $.get("demo_test.asp", function(data, status){
+            alert("Data: " + data + "\nStatus: " + status);
+            });
+        });
+
+        //POst
+        $("button").click(function(){
+        $.post("demo_test_post.asp",
+        {
+            name: "Donald Duck",
+            city: "Duckburg"
+        },
+        function(data, status){
+            alert("Data: " + data + "\nStatus: " + status);
+        });
+        });
+        function saludar(){
+            alert("Hola");
+        }
+
+        
+        
+    </script>
+</head>
+<body>
+    <input type="text" name="" id="txt">
+    <p id="parrafo">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque necessitatibus delectus laudantium. Amet aspernatur eaque totam dolorum, numquam repudiandae tenetur eum voluptas inventore tempore voluptatem ex, consectetur consequatur quis nisi.
+    </p>
+    <button id="btn">
+
+    </button>
+    
+</body>
+</html>
