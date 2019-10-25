@@ -11,8 +11,12 @@ function enviar(){
             let container = document.getElementById('tabla-lista');
             let lista = JSON.parse(http.responseText);
             console.log(lista);
-            createTable(container,lista);
-            createCards(container,lista);
+            //createTable(container,lista);
+            lista.forEach(function(item){
+                let result = createCard(item);
+                container.appendChild(result);
+            });
+
             document.getElementById('spinner').setAttribute('hidden',true);
         }
     }
@@ -128,10 +132,18 @@ function dobleClick(e) {
     });*/
 }
 
-function createCards(div_container,lista) {
+function createCard(item) {
     let card = document.createElement("div");
-    console.log(lista[0]);
-    //let imagen = 
-    
-    //div_container.appendChild(card);
+    let img = document.createElement("img");
+    img.src = "./img/user.png";
+    let userData = document.createElement("div");
+    card.appendChild(img);
+    card.appendChild(userData);
+    for (let key in item) {
+        let pItem = document.createElement("p");
+        pItem.textContent = item[key];
+        userData.appendChild(pItem);
+    }
+    card.addEventListener('dbclick',dobleClick)
+    return card;
 }
