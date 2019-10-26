@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/script.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <p>Lista de personas</p>
+    <div id="lista_personas"></div>
+    <br><br>
+    <div id="formPP" class="contenedor">
+        <div class="column">
+
+            <input type="button" id="btnOcultar" value="X" class="boton botonCerrar">
+            <br><br>
+            <input type="text" id="txtId" hidden> 
+            <label for="txtNombre">Nombre</label>
+            <input class="sinError" type="text" id="txtNombre" placeholder="Ingresar nombre"> 
+            <br><br>
+            <label for="txtApellido">Apellido</label>
+            <input class="sinError" type="text" id="txtApellido" placeholder="Ingresar apellido"> 
+            <br><br>
+            <label for="txtProvincia">Provincia</label>
+            <select id="slctPcias"></select>
+            <br><br>
+            <label for="txtLocalidad">Localidad</label>
+            <select id="slctLcds"></select>
+            <br><br>
+            <label>Sexo</label>
+            
+            <div>
+                <input type="radio" id="radioBtnFemale" name="drone" value="female"
+                checked>
+                <label for="huey">Femenino</label>
+            </div>
+            
+            <div>
+                <input type="radio" id="radioBtnMale" name="drone" value="male">
+                <label for="dewey">Masculino</label>
+            </div>
+            
+            <div class="row">
+                <input type="button" id="btnModificar" value="Modificar" class="boton">
+            </div>
+        </div>
+    </div>
+    <div id="spinner" hidden>
+        <img src="./img/5.gif" alt="spinner">
+    </div>
+</body>
+</html>
