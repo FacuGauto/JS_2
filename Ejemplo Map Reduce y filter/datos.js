@@ -1016,16 +1016,20 @@ var datos =[
   // Retornar una array de strings (el email de los usarios de sexo masculino)
   lib.maleUsersEmails = function () {
     return datos.filter(function(item){
-      if (item.gender == "male")
-        return
-    })
+      return (item.gender == "male");
+    }).map(function(item){
+      return item.email;
+    });
   };
 
   // Retornar un array de objetos que solo contengan las claves name, email y age, 
   // de todos los usuarios mayores que '25'
   lib.userOlderThan = function () {
-  
-
+    return datos.filter(function(item){
+      return (item.age > 25);
+    }).map(function(item){
+      return {name: item.name,email:item.email,age:item.age};
+    });
   };
 
   // Retornar un objeto que contenga solo el nombre y la edad (name y age) del usuario 
@@ -1042,18 +1046,27 @@ var datos =[
 
   // Retornar el promedio de edad de los usuarios (number)
   lib.userAgeAverage = function () {
-  
+    return datos.reduce(function(total,item){
+      return (total + item.age)/datos.length;
+    },0);
   };
 
   // Retornar el promedio de edad de los usuarios hombres (number)
   lib.userMaleAgeAverage = function () {
-    
-  
+    return datos.filter(function(item){
+      return item.gender == "male";
+    }).reduce(function(total,item,indice,vector){
+      return (total+item.age)/vector.length;
+    },0);
   };
 
   // Retornar el promedio de edad de los usuarios mujeres (number)
   lib.userFemaleAgeAverage = function () {
-  
+    return datos.filter(function(item){
+      return item.gender == "female";
+    }).reduce(function(total,item,indice,vector){
+      return (total+item.age)/vector.length;
+    },0);
   };
 
   // Retornar un objeto  de etiquetas (tags)
