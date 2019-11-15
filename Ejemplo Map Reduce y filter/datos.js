@@ -1073,6 +1073,9 @@ var datos =[
   // cada property del objeto es el nombre de una etiqueta
   // y el value es la cantidad de usuarios que tienene esa etiqueta
   lib.tagCloud = function () {
+    datos.forEach(function(item){
+      console.log(item.tags);
+    });
     //reduce con array y push agregando elementos
   };
   
