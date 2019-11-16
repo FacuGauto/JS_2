@@ -1078,9 +1078,18 @@ var datos =[
     });
     //reduce con array y push agregando elementos
   };
+  lib.tagCloud2 = function () {
+    datos.map(function(per){
+      return per.tags;
+    }).reduce(function(prev,item){
+      item.forEach(function(tag) {
+        //if(tag == )
+      }) 
+    })
+  };
   
   console.log(lib);
-  /*console.log(datos.filter(function(item){
+/*  console.log(datos.filter(function(item){
     if (item.gender == "female")
     {
       return item;

@@ -1,0 +1,4 @@
+npm install tsc -g
+tsc ./Practica1.ts
+tsc ./Practica1.ts -w //queda escuchando cambios
+tsc ./*.ts -w //todos los archivos
