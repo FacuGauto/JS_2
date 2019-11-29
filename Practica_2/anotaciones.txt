@@ -1,0 +1,31 @@
+npm init -y
+npm install jquery --save
+npm install
+npm install tsc -g
+tsc ./Practica1.ts
+tsc ./Practica1.ts -w //queda escuchando cambios
+tsc ./*.ts -w //todos los archivos
+tsc ./persona.ts ./alumno.ts ./profesor.ts ./funciones.ts -w
+
+instanceoff para cer que tipo de clase es
+
+
+
+npm init -y //Iniciar un nuevo proyecto
+npm install 
+npm install jquery
+npm install --save boostrap
+
+
+
+------------------------------------------------------------------------------------
+npm init                             //Iniciar un nuevo proyecto
+npm search nombrePaquete             //Buscar paquete en npm
+npm install                          //Crear proyecto con package.json existente
+npm install nombrePaquete --save-dev //Utilizar el paquete a nivel de desarrollo
+npm install nombrePaquete --save     //Utilizar el paquete y guardar
+npm start                            //Iniciar el proyecto(Si usas back-end en nodeJS)
+npm -v                               //Verificar la version de npm
+npm install nombrePaquete --g        //Instalar a nivel global
+npm install nombrePaquete            //Instalar paquete en proyecto sin guardar 
+--------------------------------------------------------------------------------------
