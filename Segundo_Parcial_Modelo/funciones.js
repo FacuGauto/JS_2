@@ -5,7 +5,7 @@ var Personas;
     console.log(lista);
     function agregar() {
         console.log("Agregar");
-        var nombre = String($("#nombre").val());
+        //let nombre:string = String($("#nombre").val());
         var personaUno = new Personas.Persona("Facundo", "Gauto");
         lista.push(personaUno);
         console.log(lista);
@@ -21,7 +21,8 @@ var Personas;
         /*lista.push(new Persona());
         var tr = document.createElement("tr");
         //.....*/
-        $("table").append(tr);
+        //$("table").append(tr);
+        //as
     }
     Personas.agregar = agregar;
     function elimminar() {

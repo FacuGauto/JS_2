@@ -5,7 +5,7 @@ namespace Personas{
     export function agregar():void{
         console.log("Agregar");
         
-        let nombre:string = String($("#nombre").val());
+        //let nombre:string = String($("#nombre").val());
         let personaUno:Persona = new Persona("Facundo","Gauto");
         lista.push(personaUno);
         
@@ -28,7 +28,8 @@ namespace Personas{
         /*lista.push(new Persona());
         var tr = document.createElement("tr");
         //.....*/
-        $("table").append(tr);
+        //$("table").append(tr);
+        //as
     }
     export function elimminar():void{
         
